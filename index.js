@@ -5,6 +5,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const connectDB = require("./config/dbConn");
 const mongoose = require("mongoose");
+const path = require("path");
 const PORT = process.env.PORT || 5000;
 
 // Connecting to the MongoDB
@@ -18,6 +19,9 @@ app.use(express.urlencoded()); // to parse url-encoded-form-data
 app.use(cookieParser()); // Parses cookies and populates req.cookies
 
 // Routes
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: path.join(__dirname, "public") });
+});
 app.use("/api/v1/tasks", require("./routes/api/tasks"));
 
 // Resiurce Not Found
@@ -30,3 +34,5 @@ mongoose.connection.once("open", () => {
   console.log("Connected to Database");
   app.listen(PORT, () => console.log("Express, started at port " + PORT));
 });
+
+module.exports = app;
