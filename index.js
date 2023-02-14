@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
+// const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const connectDB = require("./config/dbConn");
 const mongoose = require("mongoose");
@@ -18,7 +18,7 @@ app.use(express.urlencoded()); // to parse url-encoded-form-data
 app.use(cookieParser()); // Parses cookies and populates req.cookies
 
 // Routes
-app.use("/api/v1/tasks", require("./routes/tasks"));
+app.use("/api/v1/tasks", require("./routes/api/tasks"));
 
 // Resiurce Not Found
 app.use("*", require("./middlewares/not-found"));

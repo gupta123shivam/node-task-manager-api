@@ -2,10 +2,10 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +19,5 @@
   "devDependencies": {
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
-  },
-  "engines": {
-    "node": "14.x"
   }
 }
