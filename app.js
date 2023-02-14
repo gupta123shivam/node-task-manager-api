@@ -11,20 +11,20 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Express and Third-party middlewares
-app.use(morgan("tiny"));
+// app.use(morgan("tiny"));
 app.use(express.static("public"));
 app.use(express.json()); // to parse JSON send with JS or as JSON. Polpulate the req.body
 app.use(express.urlencoded()); // to parse url-encoded-form-data
 app.use(cookieParser()); // Parses cookies and populates req.cookies
 
 // Routes
-app.use("/api/v1/tasks", require("./routes/api/tasks"));
+app.use("/api/v1/tasks", require("./routes/tasks"));
 
 // Resiurce Not Found
 app.use("*", require("./middlewares/not-found"));
 
 // Error Handler middleware
-app.use(require('./middlewares/errorHandler'))
+app.use(require("./middlewares/errorHandler"));
 
 mongoose.connection.once("open", () => {
   console.log("Connected to Database");
