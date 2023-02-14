@@ -2,13 +2,14 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "",
+  "author":"Shivam Gupta",
+  "github": "https://github.com/gupta123shivam",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",
